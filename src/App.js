@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TrackingEvents from './components/TrackingEvents';
+import TrackingForm from './components/TrackingForm';
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -22,15 +23,7 @@ function App() {
     <div className="container">
       <h1>React Tracking</h1>
 
-      <form onSubmit={submitHandler}>
-        <div className="form-group">
-          <input type="text" name="tracking" className="form-control" />
-        </div>
-        <button type="submit" value="track" className="btn btn-primary">
-          Track
-        </button>
-      </form>
-
+      <TrackingForm submitHandler={submitHandler} />
       <TrackingEvents track={events} />
     </div>
   );
